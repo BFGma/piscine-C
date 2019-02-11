@@ -1,0 +1,5 @@
+Credentials cache: API:E29829BF-F096-497C-8ABD-14079D2A5E13
+        Principal: tharghaz@21-SCHOOL.RU
+
+  Issued                Expires               Principal
+Jan 28 13:31:01 2019  Jan 29 13:31:01 2019  krbtgt/21-SCHOOL.RU@21-SCHOOL.RU
