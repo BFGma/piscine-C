@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tharghaz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/12 11:56:19 by tharghaz          #+#    #+#             */
+/*   Updated: 2019/02/12 21:57:24 by tharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_doop.h"
 
 void	ft_putchar(char c)
@@ -21,7 +33,7 @@ void	ft_putnbr(int nb)
 	ft_putchar(num % 10 + '0');
 }
 
-int	ft_operat(char *operator)
+int		ft_operat(char *operator)
 {
 	if (operator[1])
 		return (10);
@@ -50,11 +62,10 @@ int		ft_do_op(int a, int b, int operator)
 	return ((*oper[operator])(a, b));
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int	result;
 	int	oper;
-
 
 	if (argc != 4)
 		return (0);
