@@ -10,4 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-$(RESULT) = 
+RESULT=do_op
+SRCS=srcs/ft_add.c \
+	srcs/ft_atoi.c \
+	srcs/ft_div.c \
+	srcs/ft_min.c \
+	srcs/ft_mod.c \
+	srcs/ft_mult.c \
+	srcs/main.c
+
+all:
+	gcc -o $(RESULT) $(SRCS)
+
+clean:
+	rm -f $(RESULT)
+
+re: clean all
