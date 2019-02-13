@@ -6,11 +6,11 @@
 /*   By: tharghaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 17:10:41 by tharghaz          #+#    #+#             */
-/*   Updated: 2019/02/11 17:16:40 by tharghaz         ###   ########.fr       */
+/*   Updated: 2019/02/12 21:51:47 by tharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		*ft_map(int *tab, int length, int(*f)(int))
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
 	int *arr;
 	int *cache;

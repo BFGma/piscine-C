@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mult.c                                          :+:      :+:    :+:   */
+/*   ft_list_push_params.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tharghaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/12 21:55:03 by tharghaz          #+#    #+#             */
-/*   Updated: 2019/02/12 21:55:04 by tharghaz         ###   ########.fr       */
+/*   Created: 2019/02/13 17:49:50 by tharghaz          #+#    #+#             */
+/*   Updated: 2019/02/13 20:49:31 by tharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_mult(int a, int b)
+#include "ft_list.h"
+
+t_list	*ft_list_push_params(int ac, char **av)
 {
-	return (a * b);
+	t_list		*list;
+	t_list		*cache;
+	int			i;
+
+	i = 1;
+	list = NULL;
+	while (ac > i)
+	{
+		cache = ft_create_elem(av[i]);
+		cache->next = list;
+		list = cache;
+		i++;
+	}
+	return (list);
 }

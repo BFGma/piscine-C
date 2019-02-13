@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mult.c                                          :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tharghaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/12 21:55:03 by tharghaz          #+#    #+#             */
-/*   Updated: 2019/02/12 21:55:04 by tharghaz         ###   ########.fr       */
+/*   Created: 2019/02/13 17:13:29 by tharghaz          #+#    #+#             */
+/*   Updated: 2019/02/13 17:24:28 by tharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_mult(int a, int b)
+#include "ft_list.h"
+
+int		ft_list_size(t_list *begin_list)
 {
-	return (a * b);
+	int		i;
+
+	i = 0;
+	while (begin_list)
+	{
+		i++;
+		begin_list = begin_list->next;
+	}
+	return (i);
 }

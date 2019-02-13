@@ -6,11 +6,11 @@
 /*   By: tharghaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 16:09:12 by tharghaz          #+#    #+#             */
-/*   Updated: 2019/02/11 16:14:46 by tharghaz         ###   ########.fr       */
+/*   Updated: 2019/02/12 21:50:52 by tharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	while (length > 0)
 	{
