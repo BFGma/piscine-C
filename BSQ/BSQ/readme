@@ -1,0 +1,14 @@
+TODO
+1) checks:												read_map.c
+	- same length lines;								+
+	- 1 line at least;									+
+	- linebr eaks;										+
+	- only introduced chars;							+
+	- "map error\n" in case of this cases;				+
+2) reading map;											read_map.c
+3) structure with settings(get settings);				bsq.h
+4) *str->**str;											ft_one_to_two.c
+5) find biggest empty square;							ft_alg.c
+6) put needed chars on it;								ft_alg.c
+7) print map;											!
+8) back to 1);
