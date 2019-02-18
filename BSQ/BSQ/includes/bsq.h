@@ -36,15 +36,13 @@ int     ft_line_counter(char *str);
 int     ft_rows_counter(char *str);
 int     ft_strlen(char *str);
 int     ft_dec_counter(int nbr);
-int     ft_map_check(char **doub);
-char **ft_one_to_two(char *str);
+t_map   *ft_map_check(char **doub);
+void	ft_one_to_two(char *str);
 char    *read_map(char *argv);
-t_map   *ft_get_sets(char **str);
-void    omegalul(char **str, t_map *sets);
+void    omegalul(t_map *sets, char **str);
 int     ft_min(int  a, int b, int c);
 void    omegalul2(char **str, int **str2, t_map *sets);
 void    omegalul3(char **str, int **str2, t_map *sets, int value);
 void    omegalul4(char **str, t_map *sets, int i_b, int j_b);
-//char	**ft_two_to_two(char **str, int length);
 
 #endif

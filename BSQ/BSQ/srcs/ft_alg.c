@@ -12,12 +12,26 @@
 
 #include "../includes/bsq.h"
 
-void	omegalul(char **str, t_map *sets)
+void	omegalul(t_map *sets, char **str)
 {
 	int		**str2;
 	int		i;
 	int		j;
 
+	
+	i = 0;
+	j = 0;
+	while (i < sets->lines)
+	{
+		while (j < sets->length)
+		{
+			printf("%c", str[i][j]);
+			j++;
+		}
+		printf("\n");
+		j = 0;
+		i++;
+	}				
 	i = 0;
 	j = 0;
 	str2 = (int **)malloc(sizeof(int *) * sets->lines);

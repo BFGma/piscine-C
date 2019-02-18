@@ -109,34 +109,38 @@ int		ft_dec_counter(int nbr)
 	return (dec);
 }
 
-int		ft_map_check(char **doub)
+t_map		*ft_map_check(char **doub)
 {
 	int		i;
 	int		j;
 	int		param_count;
-	t_map map;
+	t_map 		*map;
 		
 	i = 1;
-
+	
+	map = (t_map *)malloc(sizeof(t_map));
 	param_count = ft_strlen(doub[0]);
-	map.lines = ft_atoi(doub[0]);
-	map.length = ft_strlen(doub[1]) ;
-	map.empty = doub[0][param_count - 3];
-	map.fill = doub[0][param_count];
-	map.obstacle = doub[0][param_count - 2];
+	map->lines = ft_atoi(doub[0]);
+	map->length = ft_strlen(doub[1]) ;
+	map->empty = doub[0][param_count - 3];
+	map->fill = doub[0][param_count - 1];
+	map->obstacle = doub[0][param_count - 2];
 	while (doub[i])
 	{
 		if (ft_strlen(doub[1]) != ft_strlen(doub[i]))
 			{
-				write(2, "map error\n", 10);
+				printf(">(%d-%d)>>>%c<<<(%d,%d)", ft_strlen(doub[1]), ft_strlen(doub[i]),doub[i][j], i, j);
+				write(2, "map1error\n", 10);
 				exit (0);	
 			}
 		j = 0;
 		while (doub[i][j])
-		{
-			if (doub[i][j] != map.obstacle && doub[i][j] != map.empty)
+		{	
+			printf("%c", doub[i][j]);
+			if (doub[i][j] != map->obstacle && doub[i][j] != map->empty)
 			{
-				write(2, "map error\n", 10);
+				printf(">>>%c<<<(%d,%d)", doub[i][j], i, j);
+				write(2, "map2error\n", 10);
 				exit (0);
 			}
 			j++;
@@ -144,20 +148,21 @@ int		ft_map_check(char **doub)
 		i++;
 	}
 	doub[0][param_count - 3] = 0;
-/*	if (i - 1 != map.lines)
+	if (i - 1 != map->lines)
+		{
+				write(2, "map3error\n", 10);
+				exit (0);
+		}
+	if (ft_dec_counter(map->lines) != ft_strlen(doub[0]))
 		{
 				write(2, "map4error\n", 10);
 				exit (0);
 		}
-	if (ft_dec_counter(map.lines) != ft_strlen(doub[0]))
-		{
-				write(2, "map error\n", 10);
-				exit (0);
-		}*/
-	return (0);
+	printf("%d-%d-%c-%c\n", map->lines, map->length, map->empty, map->obstacle);
+	return (map);
 }
 
-char **ft_one_to_two(char *str)
+void	ft_one_to_two(char *str)
 {
 	int i;
 	int j;
@@ -184,24 +189,10 @@ char **ft_one_to_two(char *str)
 		i++;
 	}
 	doub[i] = 0;
-	//ft_map_check(doub);
-	return (doub);//ft_two_to_two(doub, length));
+	omegalul(ft_map_check(doub), doub);
+//	ft_map_check(doub);
+//	return (doub);
 }
-
-/*char **ft_two_to_two(char **str, int length)
-{
-	int i;
-
-	i = 0;
-	while (i + 1 < length)
-	{
-		str[i] = str[i + 1];
-		i++;
-		if (i == length)
-			str[i] = 0;	
-	}
-	return(str);
-}*/
 
 char	*read_map(char *argv)
 {
@@ -213,8 +204,7 @@ char	*read_map(char *argv)
 
 	j = 0;
 	i = ft_symb_counter(argv);
-	array =(char *)malloc(sizeof(char) * i);
-	if (!array)
+	if (!(array =(char *)malloc(sizeof(char) * i)))
 	{
 		write(2, "map error\n", 10);
 		exit (0);
@@ -230,21 +220,6 @@ char	*read_map(char *argv)
 	return (array);
 }
 
-t_map	*ft_get_sets(char **str)
-{
-	struct s_map	*sets;
-	int				param_count;
-
-	sets = (t_map *)malloc(sizeof(t_map));
-	param_count = ft_strlen(str[0]);
-	sets->lines = ft_atoi(str[0]);
-	sets->length = ft_strlen(str[1]) ;
-	sets->empty = str[0][param_count - 3];
-	sets->fill = str[0][param_count];
-	sets->obstacle = str[0][param_count - 2];
-	return (sets);
-}
-
 int		main(int argc, char **argv)
 {
 	int i;
@@ -254,8 +229,8 @@ int		main(int argc, char **argv)
 	i = 1;
 	while (argc > 1)
 	{	
-//		sets = (ft_get_sets(ft_one_to_two(read_map(argv[i]))));
-		omegalul(ft_one_to_two(read_map(argv[i])), (ft_get_sets(ft_one_to_two(read_map(argv[i])))));
+		ft_one_to_two(read_map(argv[i]));
+	//	omegalul(ft_one_to_two(read_map(argv[i])), (ft_get_sets(ft_one_to_two(read_map(argv[i])))));
 		i++;
 		argc--;
 	}
