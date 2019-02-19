@@ -45,6 +45,7 @@ int		ft_symb_counter(char *argv)
 	int		i;
 	char	buf;
 
+	i = 0;
 	fd = open(argv, O_RDONLY);
 	while (read(fd, &buf, 1) != 0)
 	{
@@ -117,7 +118,7 @@ t_map		*ft_map_check(char **doub)
 	t_map 		*map;
 		
 	i = 1;
-	
+
 	map = (t_map *)malloc(sizeof(t_map));
 	param_count = ft_strlen(doub[0]);
 	map->lines = ft_atoi(doub[0]);
@@ -129,18 +130,15 @@ t_map		*ft_map_check(char **doub)
 	{
 		if (ft_strlen(doub[1]) != ft_strlen(doub[i]))
 			{
-				printf(">(%d-%d)>>>%c<<<(%d,%d)", ft_strlen(doub[1]), ft_strlen(doub[i]),doub[i][j], i, j);
-				write(2, "map1error\n", 10);
+				write(2, "map error\n", 10);
 				exit (0);	
 			}
 		j = 0;
 		while (doub[i][j])
 		{	
-			printf("%c", doub[i][j]);
 			if (doub[i][j] != map->obstacle && doub[i][j] != map->empty)
 			{
-				printf(">>>%c<<<(%d,%d)", doub[i][j], i, j);
-				write(2, "map2error\n", 10);
+				write(2, "map error\n", 10);
 				exit (0);
 			}
 			j++;
@@ -150,15 +148,14 @@ t_map		*ft_map_check(char **doub)
 	doub[0][param_count - 3] = 0;
 	if (i - 1 != map->lines)
 		{
-				write(2, "map3error\n", 10);
+				write(2, "map error\n", 10);
 				exit (0);
 		}
 	if (ft_dec_counter(map->lines) != ft_strlen(doub[0]))
 		{
-				write(2, "map4error\n", 10);
+				write(2, "map error\n", 10);
 				exit (0);
 		}
-	printf("%d-%d-%c-%c\n", map->lines, map->length, map->empty, map->obstacle);
 	return (map);
 }
 
@@ -172,10 +169,10 @@ void	ft_one_to_two(char *str)
 	i = 0;
 	j = 0;
 	length = ft_rows_counter(str);
-	doub = (char **)malloc(sizeof(char *) * length);
+	doub = (char **)malloc(sizeof(char *) * (length + 1));
 	while (i < length)
 	{
-		doub[i] = (char *)malloc(sizeof(char) * ft_line_counter(str));
+		doub[i] = (char *)malloc(sizeof(char) * (ft_line_counter(str) + 1));
 		while (*str != '\n' && *str)
 		{
 			doub[i][j] = *str;
@@ -189,9 +186,7 @@ void	ft_one_to_two(char *str)
 		i++;
 	}
 	doub[i] = 0;
-	omegalul(ft_map_check(doub), doub);
-//	ft_map_check(doub);
-//	return (doub);
+	omegalul(ft_map_check(doub), &(doub[1]));
 }
 
 char	*read_map(char *argv)
@@ -212,10 +207,10 @@ char	*read_map(char *argv)
 	fd = open(argv, O_RDONLY);
 	while (read(fd, &buf, 1) != 0 && j < i )
 	{
-		write(1, &buf, 1);
 		array[j] = buf;
 		j++;
 	}
+	array[j] = '\0';
 	close(fd);
 	return (array);
 }
@@ -223,14 +218,11 @@ char	*read_map(char *argv)
 int		main(int argc, char **argv)
 {
 	int i;
-	char **str;
-	struct s_map	*sets;
 
 	i = 1;
 	while (argc > 1)
 	{	
 		ft_one_to_two(read_map(argv[i]));
-	//	omegalul(ft_one_to_two(read_map(argv[i])), (ft_get_sets(ft_one_to_two(read_map(argv[i])))));
 		i++;
 		argc--;
 	}

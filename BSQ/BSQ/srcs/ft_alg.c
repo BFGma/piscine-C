@@ -24,11 +24,7 @@ void	omegalul(t_map *sets, char **str)
 	while (i < sets->lines)
 	{
 		while (j < sets->length)
-		{
-			printf("%c", str[i][j]);
 			j++;
-		}
-		printf("\n");
 		j = 0;
 		i++;
 	}				
@@ -57,10 +53,8 @@ void	omegalul(t_map *sets, char **str)
 	{
 		while (j < sets->length)
 		{
-			printf("%d", str2[i][j]);
 			j++;
 		}
-		printf("\n");
 		j = 0;
 		i++;
 	}				
@@ -101,11 +95,7 @@ void	omegalul2(char **str, int **str2, t_map *sets)
 	while (i < sets->lines)
 	{
 		while (j < sets->length)
-		{
-			printf("%d", str2[i][j]);
 			j++;
-		}
-		printf("\n");
 		j = 0;
 		i++;
 	}
@@ -136,10 +126,30 @@ void	omegalul3(char **str, int **str2, t_map *sets, int value)
 		j = 0;
 		i++;
 	}
-	printf("(%d,%d), %d\n", i_b, j_b, value);
 	sets->cache = value;
 	omegalul4(str, sets,  i_b, j_b);
 }
+
+void	ft_print_result(char **str, t_map *sets)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < sets->lines)
+	{
+		while (j < sets->length)
+		{
+			write(1, &str[i][j], 1);
+			j++;
+		}
+		j = 0;
+		write(1, "\n", 1);
+		i++;
+	}
+}
+
 void	omegalul4(char **str, t_map *sets, int i_b, int j_b)
 {
 	int i;
@@ -158,9 +168,5 @@ void	omegalul4(char **str, t_map *sets, int i_b, int j_b)
 		i--;
 	}
 	i = 0;
-	while (i < sets->lines)
-	{
-		printf("%s\n", str[i]);
-		i++;
-	}
+	ft_print_result(str, sets);
 }
