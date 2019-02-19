@@ -31,6 +31,7 @@ typedef struct		s_map
 	int				error;
 }					t_map;
 
+<<<<<<< HEAD:BSQ/includes/bsq.h
 int					ft_atoi(char *str);
 int					ft_symb_counter(char *argv);
 int					ft_line_counter(char *str);
@@ -52,4 +53,21 @@ void				ft_error();
 char				*merge(char *dest, char *source);
 char				*ft_concat(char *s1, char *s2);
 void				ft_print_result(char **str, t_map *sets);
+=======
+int     ft_atoi(char *str);
+int     ft_symb_counter(char *argv);
+int     ft_line_counter(char *str);
+int     ft_rows_counter(char *str);
+int     ft_strlen(char *str);
+int     ft_dec_counter(int nbr);
+t_map   *ft_map_check(char **doub);
+void	ft_one_to_two(char *str);
+char    *read_map(char *argv);
+void    omegalul(t_map *sets, char **str);
+int     ft_min(int  a, int b, int c);
+void    omegalul2(char **str, int **str2, t_map *sets);
+void    omegalul3(char **str, int **str2, t_map *sets, int value);
+void    omegalul4(char **str, t_map *sets, int i_b, int j_b);
+
+>>>>>>> 258091f333ed2433c37fc921dd1339c662b65c4d:BSQ/BSQ/includes/bsq.h
 #endif

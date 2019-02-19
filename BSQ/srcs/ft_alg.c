@@ -12,14 +12,31 @@
 
 #include "bsq.h"
 
+<<<<<<< HEAD:BSQ/srcs/ft_alg.c
 int		omegalul(t_map *sets, char **str)
+=======
+void	omegalul(t_map *sets, char **str)
+>>>>>>> 258091f333ed2433c37fc921dd1339c662b65c4d:BSQ/BSQ/srcs/ft_alg.c
 {
 	unsigned short int		**str2;
 	int						i;
 	int						j;
 
+<<<<<<< HEAD:BSQ/srcs/ft_alg.c
 	if (sets->error == 1)
 		return (1);
+=======
+	
+	i = 0;
+	j = 0;
+	while (i < sets->lines)
+	{
+		while (j < sets->length)
+			j++;
+		j = 0;
+		i++;
+	}				
+>>>>>>> 258091f333ed2433c37fc921dd1339c662b65c4d:BSQ/BSQ/srcs/ft_alg.c
 	i = 0;
 	str2 = (unsigned short int **)malloc(sizeof(unsigned short int *) * sets->lines);
 	while (i < sets->lines)
@@ -37,6 +54,20 @@ int		omegalul(t_map *sets, char **str)
 		}
 		i++;
 	}
+<<<<<<< HEAD:BSQ/srcs/ft_alg.c
+=======
+	i = 0;
+	j = 0;
+	while (i < sets->lines)
+	{
+		while (j < sets->length)
+		{
+			j++;
+		}
+		j = 0;
+		i++;
+	}				
+>>>>>>> 258091f333ed2433c37fc921dd1339c662b65c4d:BSQ/BSQ/srcs/ft_alg.c
 	omegalul2(str, str2, sets);
 	return (0);
 }
@@ -71,6 +102,18 @@ void	omegalul2(char **str, unsigned short int **str2, t_map *sets)
 		j = 1;
 		i++;
 	}
+<<<<<<< HEAD:BSQ/srcs/ft_alg.c
+=======
+	i = 0;
+	j = 0;
+	while (i < sets->lines)
+	{
+		while (j < sets->length)
+			j++;
+		j = 0;
+		i++;
+	}
+>>>>>>> 258091f333ed2433c37fc921dd1339c662b65c4d:BSQ/BSQ/srcs/ft_alg.c
 	omegalul3(str, str2, sets, 0);
 }
 
@@ -104,6 +147,29 @@ void	omegalul3(char **str, unsigned short int **str2, t_map *sets, int value)
 	omegalul4(str, sets, i_b, j_b);
 }
 
+<<<<<<< HEAD:BSQ/srcs/ft_alg.c
+=======
+void	ft_print_result(char **str, t_map *sets)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < sets->lines)
+	{
+		while (j < sets->length)
+		{
+			write(1, &str[i][j], 1);
+			j++;
+		}
+		j = 0;
+		write(1, "\n", 1);
+		i++;
+	}
+}
+
+>>>>>>> 258091f333ed2433c37fc921dd1339c662b65c4d:BSQ/BSQ/srcs/ft_alg.c
 void	omegalul4(char **str, t_map *sets, int i_b, int j_b)
 {
 	int i;
