@@ -6,7 +6,7 @@
 /*   By: peroyce <peroyce@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 16:29:41 by tharghaz          #+#    #+#             */
-/*   Updated: 2019/02/19 21:53:36 by tharghaz         ###   ########.fr       */
+/*   Updated: 2019/02/20 21:05:55 by tharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int		omegalul(t_map *sets, char **str)
 	if (sets->error == 1)
 		return (1);
 	i = 0;
-	str2 = (unsigned short int **)malloc(sizeof(unsigned short int *) * sets->lines);
+	str2 = (unsigned short int **)malloc(sizeof(*str2) * sets->lines);
 	while (i < sets->lines)
 	{
-		str2[i] = (unsigned short int *)malloc(sizeof(unsigned short int) * sets->length);
+		str2[i] = (unsigned short int *)malloc(sizeof(str2) * sets->length);
 		j = 0;
 		while (j < sets->length)
 		{
@@ -96,7 +96,6 @@ void	omegalul3(char **str, unsigned short int **str2, t_map *sets, int value)
 			j++;
 		}
 		str2[i] = 0;
-		free(str2[i]);
 		j = 0;
 		i++;
 	}

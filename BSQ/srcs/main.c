@@ -6,7 +6,7 @@
 /*   By: peroyce <peroyce@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 14:02:02 by peroyce           #+#    #+#             */
-/*   Updated: 2019/02/19 22:30:37 by tharghaz         ###   ########.fr       */
+/*   Updated: 2019/02/20 22:46:17 by tharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,15 @@ int		main(int argc, char **argv)
 	{
 		while (i < argc)
 		{
+			errno = 0;
 			if ((fd = open(argv[i++], O_RDONLY)) && fd != -1)
-			{	
+			{
 				read_map(fd);
 			}
 			else
 				ft_error();
+			if (i < argc)
+				write (1, "\n", 1);
 		}
 	}
 	return (0);
