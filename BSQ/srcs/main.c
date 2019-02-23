@@ -30,13 +30,11 @@ int		main(int argc, char **argv)
 		{
 			errno = 0;
 			if ((fd = open(argv[i++], O_RDONLY)) && fd != -1)
-			{
 				read_map(fd);
-			}
 			else
 				ft_error();
 			if (i < argc)
-				write (1, "\n", 1);
+				write(1, "\n", 1);
 		}
 	}
 	return (0);
