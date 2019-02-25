@@ -8,13 +8,16 @@ Failed with 0%
 > Norme errors - fixed
 ## Day00
 Succeeded with 30%
+
 will add results later
 ## Day01
 Not registered, 0%
+
 will add results later
 ## Day02
 Failed with 0% 
 > No ftputchar prototype - fixed
+
 will add results later
 ## Day03
 Succeeded with 80%
@@ -22,22 +25,28 @@ Succeeded with 80%
 will add results later
 ## Day04
 Succeeded with 50%
+
 will add results later
 ## Day05
 Failed with 5%
+
 will add results later
 ## Day06
 Failed with -42%
 > putchar insted of ftputchar(forbidden function)
+
 will add results later
 ## Day07
 Failed with 20%
+
 will add results later
 ## Day08
 Failed with 0%
+
 will add results later
 ## Day09
 Failed with 22%
+
 will add results later
 ## Day10
 
