@@ -18,6 +18,7 @@ Failed with 0%
 will add results later
 ## Day03
 Succeeded with 80%
+
 will add results later
 ## Day04
 Succeeded with 50%
