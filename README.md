@@ -1,8 +1,6 @@
 # School 42
 # Piscine C
 
-> __You'll get -42 for CTRL+C CTRL+V__
-
 ## BSQ
 Failed with 0%
 > Norme errors - fixed
